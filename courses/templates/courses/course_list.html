@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    <title>Courses List</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<h2>Course List</h2>
+<a href="{% url 'add_course' %}">Add Course</a>
+<ul>
+    {% for course in courses %}
+    <li>{{ course.name }} ({{ course.code }}) - {{ course.credits }} credits</li>
+    {% endfor %}
+</ul>
+{% endblock %}

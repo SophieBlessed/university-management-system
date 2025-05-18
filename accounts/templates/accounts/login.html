@@ -1,0 +1,16 @@
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<h2>Login</h2>
+{% if error %}
+  <p style="color:red">{{ error }}</p>
+{% endif %}
+<form method="post">
+  {% csrf_token %}
+  <input type="text" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <button type="submit">Login</button>
+</form>
+<a href="{% url 'register' %}">Register</a>
